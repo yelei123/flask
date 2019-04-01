@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../static/css/anniu.css"/>
+		<link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+		<script src="../static/jQuery/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body{
+				background-image: url(../static/img/coffee-wallpaper-5120x2880.jpg);
+				background-size:100% 100%;
+				background-attachment: fixed;
+			}
+		</style>
+	</head>
+	<body>
+		<div  style="text-align: center;margin-top: 330px;">
+			<div><h1 style="margin-bottom: 20px;">欢迎登录</h1></div>
+		
+			<form action="/login" method="post">
+				<div class="input-group" style="width: 300px;margin: auto;">
+					<span class="input-group-addon" id="basic-addon1">输入账户</span>
+					<input type="text" name="username" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+				</div>
+				<br>
+		
+				
+				<div class="input-group" style="width: 300px;margin: auto;">
+					<span class="input-group-addon" id="basic-addon1">输入密码</span>
+					<input type="password" name="password" class="form-control" placeholder="password" aria-describedby="basic-addon1">
+				</div>
+				<br>
+
+				<input type="submit" class="btn btn-primary" style="position: relative; left: -20px;" value="登录"/>
+				<input type="button" class="btn btn-warning" style="position: relative; left: 20px;" onclick="javascript:history.back(-1)" value="返回"/>
+			</form>
+			
+		
+		</div>
+		
+		<script type="text/javascript">
+			  
+			{%if error %}
+				alert('您的输入有误，请重新输入')
+			{% endif %}
+			
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+	<link rel="stylesheet" type="text/css" href="../static/css/head.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+	<script src="../static/jQuery/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<style type="text/css">
+		.tupian{
+			width: 400px;
+			height: 400px;
+			margin-top: 150px;
+		}
+		body{
+			background-image: url(../static/img/sea_of_clouds-wallpaper-5120x2880.jpg);
+			background-size:100% 100%;
+			background-attachment: fixed;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="row">
+			<!-- <div class="col-lg-2"></div> -->
+			<div class="col-lg-1"></div>
+			<div class="col-lg-4">
+				<img class="tupian" src="{{good_img}}" >
+			</div>
+			<div class="col-lg-2"></div>
+			<div class="col-lg-4 " style="margin-top: 150px;">
+				<div class="panel-group" id="accordion" >
+					<div class="panel panel-default" style="background-color: DFF0D8;"><!-- 第一个容器 -->
+						<div class="panel-heading">
+							<h4 class="panel-title ">
+								<a href="#collapse1"  data-toggle="collapse" data-parent="#accordion">商品编号</a>
+							</h4>
+						</div>
+						<div id="collapse1" class="panel-collapse collapse" > <!-- 折叠菜单的部分collapse:开始时先隐藏 -->
+							<div class="panel-body">{{good_id}}</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a href="#collapse2" data-toggle="collapse" data-parent="#accordion">商品名称</a>
+							</h4>
+						</div>
+						<div id="collapse2" class="panel-collapse " > 
+							<div class="panel-body">{{good_name}}</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a href="#collapse3" data-toggle="collapse" data-parent="#accordion">商品简介</a>
+							</h4>
+						</div>
+						<div id="collapse3" class="panel-collapse collapse" >
+							<div class="panel-body">{{good_intro}}</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a href="#collapse4" data-toggle="collapse" data-parent="#accordion">配送范围</a>
+							</h4>
+						</div>
+						<div id="collapse4" class="panel-collapse collapse" >
+							<div class="panel-body">送货范围仅限焦作、南阳、驻马店、洛阳、开封、三门峡、新乡、郑州、鹤壁、周口、安阳、漯河、商丘、濮阳、济源、许昌、信阳、平顶山地区(生鲜类别仅限部分地区)</div>
+						</div>
+					</div>
+					
+					
+					
+				</div>
+				<div>
+					<h1 style="color: red;">价格：{{good_price}}</h1>
+					<!-- <button type="button" class="btn btn-primary btn-lg" >修改商品信息</button> -->
+					{% if userinfo %}
+					<a href="/changegood/{{good_id}}" class="btn btn-primary btn-lg"  >修改商品信息</a>
+					{% endif %}
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<div class="head">
+		<div class="head_line">
+			<div>
+				<ul>
+					
+					<li><a href="/list">首页</a></li>
+					{% if userinfo %}
+					<li><a href="/addgood">添加商品</a></li>
+					<li><a href="/removegood">删除商品</a></li>
+					<li><a href="/quit">注销用户</a></li> 
+					{% else %}
+					<li><a href="/login">登录</a></li>         
+					<li><a href="/regist">注册</a></li>
+					{% endif %}
+					
+					
+					<li><a href="#" onclick="javascript:history.back(-1)">返回</a></li>
+				</ul>                                 
+			</div>
+		</div>
+	</div>
+	
+
+
+</body>
+</html>

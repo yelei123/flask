@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询商品</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/head.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/shubiao.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+	<script src="../static/jQuery/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<style type="text/css">
+		.kuang{
+			height: 300px;
+			border: 10px ;
+			padding: 50px;
+		}
+		.tupian{
+			height: 200px;
+			width: 350px;
+		}
+
+		body{
+			background-image: url(../static/img/sea_of_clouds-wallpaper-5120x2880.jpg);
+			background-size:100% 100%;
+			background-attachment: fixed;
+		}
+	</style>
+</head>
+<body>
+    <form action="/querygood" method="post" style="margin-top: 150px;text-align: center;">
+    	
+    	 <div class="col-lg-4"></div>
+    	 <div class="col-lg-4">
+			 <h1>搜索商品</h1>
+    		<div class="input-group">
+    			<input type="text" name="goodname" class="form-control"    placeholder="请输入商品名称，支持模糊查询...">
+    			<span class="input-group-btn">
+    				<input class="btn btn-default"   type="submit" value="搜索"/>
+    				<!-- <button  type="button">Go!</button> -->
+    			</span>
+    		</div>
+    	</div><!-- /input-group -->
+    		
+    </form>
+	
+	<div class="container">
+		
+		{% for id,name in infoarray.items() %}
+			<div class="col-lg-6 kuang">
+				<div class="row"></div>
+				<div class="col-lg-8 ">
+					<div class="hovereffect">
+						<img class="img-responsive tupian" src="{{name['good_img']}}" alt="{{name['good_name']}}">
+						<div class="overlay">
+						   <h2>{{name["good_name"]}}</h2>
+						   <a class="info" href="/detail/{{id}}">查看详情</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 " style="">
+					<div class="row" style="height: 130px;text-align: center;">
+						<h4>简介</h4>
+						<p>{{name["good_intro"]}}</p>
+					</div>
+					<div class="row" style="color: red;"><h1>价格:{{name["good_price"]}}</h1></div>
+				</div>
+			</div>
+			
+		{% endfor %}										
+	</div>
+	
+	<div class="head">
+		<div class="head_line">
+			<div>
+				<ul>
+					
+					<li><a href="/list">首页</a></li>
+					{% if userinfo %}
+					<li><a href="/addgood">添加商品</a></li>
+					<li><a href="/removegood">删除商品</a></li>
+					<li><a href="/quit">注销用户</a></li> 
+					{% else %}
+					<li><a href="/login">登录</a></li>         
+					<li><a href="/regist">注册</a></li>
+					{% endif %}
+					
+					
+					<li><a href="#" onclick="javascript:history.back(-1)">返回</a></li>
+				</ul>                                 
+			</div>
+		</div>
+	</div>
+	
+	
+	<script>  
+	    {%if error %}
+			alert('搜索物品不存在')
+		{% endif %}
+	</script> 
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除商品</title>
+	<link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+	<script src="../static/jQuery/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		body{
+			background-image: url(../static/img/sea_of_clouds-wallpaper-5120x2880.jpg);
+			background-size:100% 100%;
+			background-attachment: fixed;
+		}
+	</style>
+</head>
+<body>
+	<form action="/removegood" method="post" style="margin-top: 300px;color: firebrick;">
+		
+		 <div class="col-lg-4"></div>
+		 <div class="col-lg-3" style="text-align: center;">
+			 <h1>删除商品</h1>
+			<input type="text" name="goodid" class="form-control" style="margin-top: 50px;"   placeholder="请输入删除商品编号，删除不可逆...">
+			<br>
+			<input type="submit" class="btn btn-primary btn-default"  value="确认"/>
+			<input type="button" class="btn btn-warning btn-default" style="margin-left: 20px;" onclick="javascript:history.back(-1)" value="返回"/>
+		</div><!-- /input-group -->
+			
+	</form>
+
+</body>
+</html>

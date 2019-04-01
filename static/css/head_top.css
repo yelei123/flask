@@ -1,0 +1,75 @@
+@charset "UTF-8";
+div.head_top{
+	width: 1100px;
+	height: 40px;
+	background-color:#323232 ;	
+	margin: auto;
+}
+div.head_top>ul.top_letf{
+	width: 400px;
+	background-color:#323232;
+	list-style:none;
+}
+div.head_top>ul.top_letf>li{
+	float: left;
+	width: 20%;
+	height: 40px;
+	border-right: 1px solid #626265 ;
+	/* background-color: aqua; */
+	text-align: center;
+	line-height: 40px;
+	font-size: smaller;
+}
+div.head_top>ul.top_letf>li.phone_ico{
+	float: left;
+	width: 7%;
+	height: 40px;
+	border-right: 0px solid #626265 ;
+	/* background-color: aqua; */
+	position: relative;
+	top: 7px;
+	left: 3px;
+}
+div.head_top>ul.top_letf>li.phone_num{
+	float: left;
+	width: 47%;
+	height: 40px;
+	border-right: 1px solid #626265 ;
+	/* background-color: aqua; */
+	text-align: center;
+	font-size: medium;
+}
+div.head_top>ul.top_letf>li>a{
+	display: block;
+	color: #B4B5BA;
+	text-decoration: none;
+}
+div.head_top>div.top_right{
+	width: 160px;
+	background-color:#F75C5C;
+	float: right;
+	position: relative;
+	top: 7px;
+}
+div.head_top>div.top_right>a{
+	display: block;
+	height: 25px;
+	width: 49%;
+	text-align: center;
+	text-decoration: none;
+	float: right;
+	font-size: smaller;
+	line-height: 25px;
+	
+}
+div.head_top>div.top_right>a.denglu{
+	display: block;
+	width: 49%;
+	text-align: center;
+	text-decoration: none;
+	margin: 1px;
+	float: right;
+	background-color:#323232 ;
+}
+
+

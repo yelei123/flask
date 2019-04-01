@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改商品信息</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/head.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+	<script src="../static/jQuery/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		body{
+			background-image: url(../static/img/110.jpg);
+			background-size:100% 100%;
+			background-attachment: fixed;
+		}
+	</style>
+	
+</head>
+<body>
+    
+	
+	
+	<div class="container">	
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4" style="color: yellow;">
+			<h2 style="text-align: center;margin-top: 100px;">商品编号：{{good_id}}</h2>
+			<form action="/changegood/{{good_id}}" method="post">
+				<!-- <input name="textfield" type="text" value="默认值" onfocus="if (value =='默认值){value =''}" onblur="if (value ==''){value='默认值}" /> -->
+					商品名称 <br>
+					<input type="text" name="goodname" class="form-control" value="{{good_name}}"/>
+					
+					
+					<br>
+					
+					商品简介<br><textarea name="goodintro" class="form-control" cols="20" rows="5" >{{good_intro}}</textarea>
+					<br>
+					商品价格<br><input type="text" class="form-control" name="goodprice" value="{{good_price}}"/>
+					<br>
+					<br>
+					图片路径<input type="text" class="form-control" name="imgfile" value="../static/img/" />
+					
+					<br>
+					<input type="file" name="imgname"  id="file3" accept="image/*" />
+					<br>
+					<br>
+					<input type="submit" class="btn btn-primary btn-default" style="margin-left: 80px;" value="确认"/>
+					<input type="button" class="btn btn-warning btn-default" style="margin-left: 20px;" onclick="javascript:history.back(-1)" value="返回"/>
+					
+			</form>
+		</div>
+	</div>
+	
+	
+	
+	
+
+    
+	
+	
+	
+	<script type="text/javascript">
+ 
+
+		
+	</script>  
+
+</body>
+</html>
